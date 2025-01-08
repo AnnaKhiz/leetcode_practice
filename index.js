@@ -12,7 +12,6 @@ var expect = function(val) {
 							throw new Error('Not Equal')
 						} 
 						return true
-					
 					} else {
 						if (val !== valueToBe) {
 							throw new Error('Not Equal')
