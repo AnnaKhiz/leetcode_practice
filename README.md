@@ -1,7 +1,7 @@
 # leetcode_practice
 Small tasks from LeetCode for practice JS (30 Days of JavaScript)
 
-2 Task:
+2 Task (easy):
 
 Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
 
