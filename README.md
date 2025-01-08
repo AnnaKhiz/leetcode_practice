@@ -1,12 +1,10 @@
 # leetcode_practice
 Small tasks from LeetCode for practice JS (30 Days of JavaScript)
 
-2 Task (easy):
+3 Task (easy):
 
-Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
+Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
 
-The three functions are:
+The returned array should be created such that returnedArray[i] = fn(arr[i], i).
 
-increment() increases the current value by 1 and then returns it.
-decrement() reduces the current value by 1 and then returns it.
-reset() sets the current value to init and then returns it.
+Please solve it without the built-in Array.map method.
