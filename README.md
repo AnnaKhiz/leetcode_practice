@@ -1,7 +1,7 @@
 # leetcode_practice
 Small tasks from LeetCode for practice JS (30 Days of JavaScript)
 
-1 Task:
+1 Task (easy):
 
 Write a function expect that helps developers test their code. It should take in any value val and return an object with the following two functions.
 
