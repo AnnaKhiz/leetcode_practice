@@ -1,38 +1,32 @@
+const arr = [-2,-1,0,1,2];
+var filter = function(arr, fn) {
+	let filteredArr = [];
 
-const nums = [1,2,8,3,10,23];
-const init = 0;
+	if (!arr.length) return [];
+	for (let i = 0; i < arr.length; i++) {
 
-var reduce = function(nums, fn, init) {
-	let accum = init;
+		if (arr.length === 1 && arr[i] === 0) return [0];
 
-	if (!nums.length) return init;
-
-	for (let i = 0; i < nums.length; i++) {
-		if (nums.length === 1 && nums[i] === 0) return 0;
-
-		const functionResult = fn(accum, nums[i]);
-		if (!functionResult && typeof functionResult !== 'number') return init;
-		accum = fn(accum, nums[i])
+		if (fn(arr[i], i)) {
+			filteredArr.push(arr[i])
+		}
 	}
-	return accum;
+	return filteredArr;
 };
 
-reduce(nums, sum, init)
-
-function simpleReduce(accum, curr) {
-	return accum + curr;
+function greaterThan10(n) {
+	return n > 10;
 }
 
-function staticReturnValue(accum, curr) {
-	return 0
+function firstIndex(n, i) {
+	return i === 0;
 }
 
-function sum(accum, curr) {
-	return accum + curr * curr;
+function plusOne(n) {
+	return n + 1
 }
 
-
-function remindDivision(accum, curr) {
-	return (curr + accum) % 2;
-}
+console.log(filter(arr, greaterThan10))
+console.log(filter(arr, firstIndex))
+console.log(filter(arr, plusOne))
 
