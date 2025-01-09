@@ -1,10 +1,12 @@
 # leetcode_practice
 Small tasks from LeetCode for practice JS (30 Days of JavaScript)
 
-3 Task (easy):
+5 Task (easy):
 
-Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
+Given an integer array nums, a reducer function fn, and an initial value init, return the final result obtained by executing the fn function on each element of the array, sequentially, passing in the return value from the calculation on the preceding element.
 
-The returned array should be created such that returnedArray[i] = fn(arr[i], i).
+This result is achieved through the following operations: val = fn(init, nums[0]), val = fn(val, nums[1]), val = fn(val, nums[2]), ... until every element in the array has been processed. The ultimate value of val is then returned.
 
-Please solve it without the built-in Array.map method.
+If the length of the array is 0, the function should return init.
+
+Please solve it without using the built-in Array.reduce method.

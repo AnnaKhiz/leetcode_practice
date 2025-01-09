@@ -1,37 +1,38 @@
-const arr = [10, 20, 30];
-const returnedArray = []
 
-var map = function(arr, fn) {
-	if (!arr.length) return [];
+const nums = [1,2,8,3,10,23];
+const init = 0;
 
-	for (let i = 0; i < arr.length; i++) {
-		if (arr.length === 1 && arr[i] === 0) return [0];
-		returnedArray[i] = parseInt(fn(arr[i], i));
+var reduce = function(nums, fn, init) {
+	let accum = init;
+
+	if (!nums.length) return init;
+
+	for (let i = 0; i < nums.length; i++) {
+		if (nums.length === 1 && nums[i] === 0) return 0;
+
+		const functionResult = fn(accum, nums[i]);
+		if (!functionResult && typeof functionResult !== 'number') return init;
+		accum = fn(accum, nums[i])
 	}
-	return returnedArray;
+	return accum;
 };
 
-map(arr, plusI);
+reduce(nums, sum, init)
 
-function plusI(el, i) {
-	return el + i;
-}
-
-function plusone(n) {
-	return n + 1;
+function simpleReduce(accum, curr) {
+	return accum + curr;
 }
 
-function constant() {
-	return parseInt(42);
+function staticReturnValue(accum, curr) {
+	return 0
 }
 
-function nMinusI(n, i) { 
-	return n - i;
+function sum(accum, curr) {
+	return accum + curr * curr;
 }
 
-function plus10(n) { 
-	return n + 10; 
+
+function remindDivision(accum, curr) {
+	return (curr + accum) % 2;
 }
-function identity(n, i) { 
-	return n; 
-}
+
