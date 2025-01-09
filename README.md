@@ -1,10 +1,14 @@
 # leetcode_practice
 Small tasks from LeetCode for practice JS (30 Days of JavaScript)
 
-3 Task (easy):
+4 Task (easy):
 
-Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
+Given an integer array arr and a filtering function fn, return a filtered array filteredArr.
 
-The returned array should be created such that returnedArray[i] = fn(arr[i], i).
+The fn function takes one or two arguments:
 
-Please solve it without the built-in Array.map method.
+arr[i] - number from the arr
+i - index of arr[i]
+filteredArr should only contain the elements from the arr for which the expression fn(arr[i], i) evaluates to a truthy value. A truthy value is a value where Boolean(value) returns true.
+
+Please solve it without the built-in Array.filter method.
